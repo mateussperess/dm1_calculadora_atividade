@@ -74,28 +74,29 @@ public class Calculadora2 extends AppCompatActivity {
 
         switch (btn.getText().toString()) {
             case "+":
-                Log.d("OPERACAO", "OPERACAO SOMA CLICADA");
+                Log.d("OPERACAO SELECIONADA", "OPERACAO SOMA CLICADA");
                 operacao = "+";
                 flagNum = 2;
                 break;
             case "-":
-                Log.d("OPERACAO", "OPERACAO SUBTRACAO CLICADA");
+                Log.d("OPERACAO SELECIONADA", "OPERACAO SUBTRACAO CLICADA");
                 operacao = "-";
                 flagNum = 2;
                 break;
             case "*":
-                Log.d("OPERACAO", "OPERACAO MULTIPLICACAO CLICADA");
+                Log.d("OPERACAO SELECIONADA", "OPERACAO MULTIPLICACAO CLICADA");
                 operacao = "*";
                 flagNum = 2;
                 break;
             case "/":
-                Log.d("OPERACAO", "OPERACAO DIVISAO CLICADA");
+                Log.d("OPERACAO SELECIONADA", "OPERACAO DIVISAO CLICADA");
                 operacao = "/";
                 flagNum = 2;
                 break;
         }
 
-        expressao += operacao;
+        expressao = n1 + operacao;
+        txtResult2.setText(expressao);
     }
 
     public void clickBtnEquals2(View view) {
