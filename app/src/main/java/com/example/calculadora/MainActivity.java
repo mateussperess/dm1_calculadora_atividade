@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Operação SOMA selecionada", Toast.LENGTH_SHORT).show();
                 try {
 
-                    Double numero1 = Double.parseDouble(etNumber1.getText().toString());
-                    Double numero2 = Double.parseDouble(etNumber2.getText().toString());
+                    double numero1 = Double.parseDouble(etNumber1.getText().toString());
+                    double numero2 = Double.parseDouble(etNumber2.getText().toString());
 
                     result = calcularOperacao(operacao, numero1, numero2);
                     Log.d("TESTE", "Resultado: " + result);

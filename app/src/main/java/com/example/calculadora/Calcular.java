@@ -18,4 +18,18 @@ public class Calcular {
     public static Double dividir(double numero1, double numero2) {
         return numero1 / numero2;
     }
+
+    public static Float somar(float numero1, float numero2) { return numero1 + numero2; }
+
+    public static Float subtrair(float numero1, float numero2) {
+        return numero1 - numero2;
+    }
+
+    public static Float multiplicar(float numero1, float numero2) {
+        return numero1 * numero2;
+    }
+
+    public static Float dividir(float numero1, float numero2) {
+        return numero1 / numero2;
+    }
 }
