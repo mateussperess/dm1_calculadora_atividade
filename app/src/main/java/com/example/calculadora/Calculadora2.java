@@ -67,6 +67,52 @@ public class Calculadora2 extends AppCompatActivity {
     }
 
     public void clickBtnDot(View view) {
+        if(flagNum == 1) {
+            if (!n1.contains(".")) {
+                if(n1 == "") {
+                    n1 = "0.";
+                } else {
+                    n1 += ".";
+                }
+            }
+        } else if (flagNum == 2) {
+            if(!n2.contains(".")) {
+                if(n2.equals("")) {
+                    n2 = "0.";
+                } else {
+                    n2 += ".";
+                }
+                expressao = n1 + operacao + n2;
+            }
+        }
+
+        txtResult2.setText(expressao);
+    }
+
+    public void clickBtnDel(View view) {
+        if (flagNum == 1) {
+            if (!n1.isEmpty()) {
+                n1 = n1.substring(0, n1.length() - 1);
+            }
+            expressao = n1;
+
+        } else if (flagNum == 2) {
+            if (!n2.isEmpty()) {
+                n2 = n2.substring(0, n2.length() - 1);
+
+            } else if (!operacao.isEmpty()) {
+                operacao = "";
+                flagNum = 1;
+            }
+
+            expressao = n1 + operacao + n2;
+        }
+
+        if (expressao.isEmpty()) {
+            expressao = "0";
+        }
+
+        txtResult2.setText(expressao);
     }
 
     public void clickBtnOp2(View view) {
