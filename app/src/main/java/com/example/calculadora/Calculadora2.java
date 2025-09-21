@@ -146,25 +146,30 @@ public class Calculadora2 extends AppCompatActivity {
     }
 
     public void clickBtnEquals2(View view) {
+        if (n1.isEmpty() || n2.isEmpty() || operacao.isEmpty()) {
+            txtResult2.setText("0,00");
+            return;
+        }
+
         float numero1 = Float.parseFloat(n1);
         float numero2 = Float.parseFloat(n2);
         float result = 0;
-        Log.d("OPERANDO" , "OPERACAO EH: " + operacao);
+
         switch (operacao) {
             case "+":
-                Log.d("OPERANDO" , "Realizando SOMA");
                 result = Calcular.somar(numero1, numero2);
                 break;
             case "-":
-                Log.d("OPERANDO" , "Realizando SUBTRACAO");
                 result = Calcular.subtrair(numero1, numero2);
                 break;
             case "*":
-                Log.d("OPERANDO" , "Realizando MULTIPLICACAO");
                 result = Calcular.multiplicar(numero1, numero2);
                 break;
             case "/":
-                Log.d("OPERANDO" , "Realizando DIVISAO");
+                if (numero2 == 0) {
+                    txtResult2.setText("Divisão por 0");
+                    return;
+                }
                 result = Calcular.dividir(numero1, numero2);
                 break;
         }
